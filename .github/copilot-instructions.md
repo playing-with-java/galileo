@@ -1,0 +1,1 @@
+For all architectural conventions, build commands, and Spring Boot rules for this project, STRICTLY read and follow the `AGENTS.md` file located at the root of the repository.
