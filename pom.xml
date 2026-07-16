@@ -28,6 +28,8 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
+		<maven.checkstyle.version>3.6.0</maven.checkstyle.version>
+    	<checkstyle.version>13.8.0</checkstyle.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -72,54 +74,87 @@
 
 	<build>
 		<plugins>
-		<plugin>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-maven-plugin</artifactId>
-			<configuration>
-			<excludes>
-				<exclude>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				</exclude>
-			</excludes>
-			</configuration>
-		</plugin>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<executions>
-			<execution>
-				<id>default-compile</id>
-				<phase>compile</phase>
-				<goals>
-				<goal>compile</goal>
-				</goals>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-				<annotationProcessorPaths>
-					<path>
+				<excludes>
+					<exclude>
 					<groupId>org.projectlombok</groupId>
 					<artifactId>lombok</artifactId>
-					</path>
-				</annotationProcessorPaths>
+					</exclude>
+				</excludes>
 				</configuration>
-			</execution>
-			<execution>
-				<id>default-testCompile</id>
-				<phase>test-compile</phase>
-				<goals>
-				<goal>testCompile</goal>
-				</goals>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+				<execution>
+					<id>default-compile</id>
+					<phase>compile</phase>
+					<goals>
+					<goal>compile</goal>
+					</goals>
+					<configuration>
+					<annotationProcessorPaths>
+						<path>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+					</configuration>
+				</execution>
+				<execution>
+					<id>default-testCompile</id>
+					<phase>test-compile</phase>
+					<goals>
+					<goal>testCompile</goal>
+					</goals>
+					<configuration>
+					<annotationProcessorPaths>
+						<path>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+					</configuration>
+				</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${maven.checkstyle.version}</version>
+
+				<dependencies>
+					<dependency>
+						<groupId>com.puppycrawl.tools</groupId>
+						<artifactId>checkstyle</artifactId>
+						<version>${checkstyle.version}</version>
+					</dependency>
+				</dependencies>
+
 				<configuration>
-				<annotationProcessorPaths>
-					<path>
-					<groupId>org.projectlombok</groupId>
-					<artifactId>lombok</artifactId>
-					</path>
-				</annotationProcessorPaths>
+					<configLocation>config/checkstyle/checkstyle.xml</configLocation>
+					<suppressionsLocation>config/checkstyle/suppressions.xml</suppressionsLocation>
+
+					<consoleOutput>true</consoleOutput>
+					<failsOnError>true</failsOnError>
+					<linkXRef>false</linkXRef>
+					<includeTestSourceDirectory>true</includeTestSourceDirectory>
 				</configuration>
-			</execution>
-			</executions>
-		</plugin>
+
+				<executions>
+					<execution>
+						<id>validate</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
   	</build>
 

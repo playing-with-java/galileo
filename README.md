@@ -61,3 +61,18 @@ Ejecutar pruebas unitarias y de integración con:
 ```bash
 ./mvnw test
 ```
+
+## Linter / Checkstyle
+
+Este proyecto usa Checkstyle con la configuración en `config/checkstyle/checkstyle.xml`.
+Para validar el estilo, ejecuta:
+
+```bash
+./mvnw clean verify
+```
+
+O solamente el chequeo de Checkstyle:
+
+```bash
+./mvnw checkstyle:check
+```
