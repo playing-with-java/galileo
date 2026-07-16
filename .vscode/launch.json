@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot App - Copilot",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.copilot.CopilotApplication",
+            "projectName": "copilot",
+            "args": "",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

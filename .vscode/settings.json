@@ -1,0 +1,6 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.checkstyle.configuration": "${workspaceFolder}/config/checkstyle/checkstyle.xml",
+    "java.checkstyle.version": "13.8.0"
+}
