@@ -16,6 +16,8 @@
 - NEVER inject a `@Repository` directly into a Controller.
 - Dependency Injection: ALWAYS use constructor injection or Lombok's `@RequiredArgsConstructor`. 
 - NEVER use field injection (`@Autowired`).
+- Security must be implemented with Spring Security and JWT for endpoint access control.
+- Controllers should document bearer authentication in OpenAPI when endpoints require a JWT token.
 
 ## Workflow Rules
 - **Small Changes:** Prioritize small, highly readable code changes.
