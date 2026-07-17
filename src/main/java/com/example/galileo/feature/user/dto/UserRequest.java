@@ -1,4 +1,4 @@
-package com.example.galileo.dto;
+package com.example.galileo.feature.user.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

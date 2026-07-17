@@ -1,4 +1,4 @@
-package com.example.galileo.dto;
+package com.example.galileo.feature.product.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;

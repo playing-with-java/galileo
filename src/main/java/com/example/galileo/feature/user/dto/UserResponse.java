@@ -1,6 +1,6 @@
-package com.example.galileo.dto;
+package com.example.galileo.feature.user.dto;
 
-import com.example.galileo.model.User;
+import com.example.galileo.feature.user.User;
 
 public record UserResponse(Long id, String name, String email) {
 

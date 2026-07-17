@@ -1,9 +1,7 @@
-package com.example.galileo.repository;
+package com.example.galileo.feature.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import com.example.galileo.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {

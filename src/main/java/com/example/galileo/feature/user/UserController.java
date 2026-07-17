@@ -1,4 +1,4 @@
-package com.example.galileo.controller;
+package com.example.galileo.feature.user;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,10 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.galileo.dto.UserRequest;
-import com.example.galileo.dto.UserResponse;
-import com.example.galileo.model.User;
-import com.example.galileo.service.UserService;
+import com.example.galileo.feature.user.dto.UserRequest;
+import com.example.galileo.feature.user.dto.UserResponse;
 
 @RestController
 @RequestMapping("/api/users")

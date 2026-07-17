@@ -1,4 +1,4 @@
-package com.example.galileo.service;
+package com.example.galileo.feature.user;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -6,11 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.galileo.dto.UserRequest;
 import com.example.galileo.exception.DuplicateResourceException;
 import com.example.galileo.exception.ResourceNotFoundException;
-import com.example.galileo.model.User;
-import com.example.galileo.repository.UserRepository;
+import com.example.galileo.feature.user.dto.UserRequest;
 
 @Service
 @Transactional(readOnly = true)

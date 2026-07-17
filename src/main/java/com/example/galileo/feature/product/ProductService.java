@@ -1,4 +1,4 @@
-package com.example.galileo.service;
+package com.example.galileo.feature.product;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -6,10 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.galileo.dto.ProductRequest;
 import com.example.galileo.exception.ResourceNotFoundException;
-import com.example.galileo.model.Product;
-import com.example.galileo.repository.ProductRepository;
+import com.example.galileo.feature.product.dto.ProductRequest;
+
 
 @Service
 @Transactional(readOnly = true)

@@ -1,7 +1,8 @@
-package com.example.galileo.dto;
+package com.example.galileo.feature.product.dto;
 
-import com.example.galileo.model.Product;
 import java.math.BigDecimal;
+
+import com.example.galileo.feature.product.Product;
 
 public record ProductResponse(Long id, String name, String description, BigDecimal price) {
 

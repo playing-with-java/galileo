@@ -1,7 +1,5 @@
-package com.example.galileo.advice;
+package com.example.galileo.exception;
 
-import com.example.galileo.exception.DuplicateResourceException;
-import com.example.galileo.exception.ResourceNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import org.springframework.dao.DataIntegrityViolationException;

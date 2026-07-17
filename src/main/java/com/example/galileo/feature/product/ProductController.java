@@ -1,4 +1,4 @@
-package com.example.galileo.controller;
+package com.example.galileo.feature.product;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -18,10 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.galileo.dto.ProductRequest;
-import com.example.galileo.dto.ProductResponse;
-import com.example.galileo.model.Product;
-import com.example.galileo.service.ProductService;
+import com.example.galileo.feature.product.dto.ProductRequest;
+import com.example.galileo.feature.product.dto.ProductResponse;
 
 @RestController
 @RequestMapping("/api/products")

@@ -1,4 +1,4 @@
-package com.example.galileo.model;
+package com.example.galileo.feature.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

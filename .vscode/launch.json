@@ -3,11 +3,11 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Spring Boot App - Copilot",
+            "name": "Spring Boot App - Galileo",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.example.copilot.CopilotApplication",
-            "projectName": "copilot",
+            "mainClass": "com.example.galileo.GalileoApplication",
+            "projectName": "galileo",
             "args": "",
             "console": "integratedTerminal",
             "envFile": "${workspaceFolder}/.env"
