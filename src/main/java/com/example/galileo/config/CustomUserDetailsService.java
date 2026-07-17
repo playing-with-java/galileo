@@ -39,6 +39,12 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .build();
     }
 
+    /**
+     * Crea un objeto {@link Authentication} a partir de un token JWT válido.
+     *
+     * @param token el token JWT que contiene el nombre de usuario
+     * @return la autenticación construida con los detalles de usuario y sus autoridades
+     */
     public Authentication getAuthentication(String token) {
         String username = jwtTokenProvider.getUsername(token);
         UserDetails userDetails = loadUserByUsername(username);
