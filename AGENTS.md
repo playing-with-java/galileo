@@ -9,6 +9,7 @@
 - **Run:** `./mvnw spring-boot:run`
 - **Clean:** `./mvnw clean`
 - **Test:** `./mvnw test`
+- **Unit tests:** `./mvnw test`
 
 ## Architecture & Code Conventions
 - STRICT 3-layer architecture: Controller -> Service -> Repository.
@@ -22,6 +23,6 @@
 ## Workflow Rules
 - **Small Changes:** Prioritize small, highly readable code changes.
 - **OpenAPI:** When adding or modifying endpoints, validate them using `springdoc-openapi` annotations.
-- **Testing:** If you add new routes or logic, you MUST write or update the corresponding tests.
+- **Testing:** If you add new routes or logic, you MUST write or update the corresponding unit tests and run `./mvnw test` before submitting.
 - **Linting:** Respect the Checkstyle configuration in `config/checkstyle/checkstyle.xml`; run `./mvnw clean verify` or `./mvnw checkstyle:check` before submitting.
 - **Context:** Check `README.md` for setup instructions and `src/main/java/com/example/galileo/controller` to understand existing endpoint designs before proposing new ones.

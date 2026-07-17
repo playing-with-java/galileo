@@ -70,6 +70,9 @@ Ejecutar pruebas unitarias y de integración con:
 ./mvnw test
 ```
 
+- Las pruebas unitarias se encuentran en `src/test/java`.
+- Antes de enviar cambios, valida que todas las pruebas unitarias pasen con `./mvnw test`.
+
 ## Linter / Checkstyle
 
 Este proyecto usa Checkstyle con la configuración en `config/checkstyle/checkstyle.xml`.
