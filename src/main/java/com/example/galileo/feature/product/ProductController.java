@@ -1,6 +1,7 @@
 package com.example.galileo.feature.product;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,7 @@ import com.example.galileo.feature.product.dto.ProductResponse;
 @RestController
 @RequestMapping("/api/products")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 @Tag(name = "Products", description = "APIs para gestionar productos")
 public class ProductController {
 

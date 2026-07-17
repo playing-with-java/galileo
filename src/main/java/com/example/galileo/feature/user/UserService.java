@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.galileo.exception.DuplicateResourceException;
 import com.example.galileo.exception.ResourceNotFoundException;
 import com.example.galileo.feature.user.dto.UserRequest;
+import com.example.galileo.feature.user.UserRole;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
 @Transactional(readOnly = true)
@@ -16,6 +18,7 @@ import com.example.galileo.feature.user.dto.UserRequest;
 public class UserService {
 
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
     public Page<User> findAll(Pageable pageable) {
         return repository.findAll(pageable);
@@ -32,7 +35,12 @@ public class UserService {
             throw new DuplicateResourceException("Email already in use: " + request.email());
         }
 
-        User user = new User(request.name(), request.email());
+        User user = new User(
+                request.name(),
+                request.email(),
+                passwordEncoder.encode(request.password()),
+                UserRole.USER
+        );
         return repository.save(user);
     }
 
@@ -45,6 +53,7 @@ public class UserService {
         User user = findById(id);
         user.setName(request.name());
         user.setEmail(request.email());
+        user.setPassword(passwordEncoder.encode(request.password()));
         return repository.save(user);
     }
 
